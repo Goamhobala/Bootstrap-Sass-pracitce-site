@@ -15,4 +15,12 @@
   align-items: $align;
 }
 
+@mixin container_skin($bg-color, $font-color, $font-size: "") {
+  background-color: $bg-color;
+  color: $font-color;
+  @if font-size != "" {
+    font-size: $font-size;
+  }
+}
+
 @import "../node_modules/bootstrap/scss/mixins";
