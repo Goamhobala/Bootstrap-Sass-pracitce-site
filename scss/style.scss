@@ -1,8 +1,10 @@
 @use 'customise';
 @use 'mixins';
+@use 'typography';
 @use 'components/themes';
 @use 'components/btn';
 @use 'sections/nav';
+@use 'sections/hero';
 
 html {
   font-size: 62.5%;

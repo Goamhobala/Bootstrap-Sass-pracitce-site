@@ -1,0 +1,14 @@
+@use 'mixins' as *;
+
+@keyframes border--pulse {
+  0% {
+    transform: scale(1);
+    transition: transform 0.5s, opacity, 0.5s;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.75);
+  }
+}

@@ -1,5 +1,10 @@
 @use "../mixins" as *;
 
-.bg--gradient {
-  @include gradient;
+.container__content {
+  margin: auto;
+  max-width: 515px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 960px;
+  }
 }

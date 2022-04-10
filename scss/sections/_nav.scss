@@ -1,5 +1,5 @@
 @use '../customise' as *;
-@use '../mixins';
+@use '../mixins' as *;
 
 .container-nav {
   padding: 0 3rem;
@@ -9,6 +9,9 @@
   color: $white;
   font-size: 1.35rem;
   font-weight: 500;
+  box-shadow: 0 2px 7px 0.5px $gray-700;
+  padding: 2rem;
+  @include gradient($primary, $secondary);
 
   &-nav {
     align-items: center;
@@ -34,6 +37,9 @@
     .nav-item {
       margin-top: 1rem;
       font-size: 2rem;
+      &--btn {
+        display: none;
+      }
     }
   }
 }

@@ -1,26 +1,38 @@
 @use "customise" as *;
 
-@mixin gradient {
-  background: linear-gradient(
-    90deg,
-    rgba($primary, 0.65) 28%,
-    rgba($secondary, 0.8) 100%
-  );
+@mixin gradient($colour_left, $colour_right) {
+  background: linear-gradient(90deg, $colour_left 28%, $colour_right 100%);
 }
 
 @mixin flex($justify, $align, $direction: row) {
+  // justify-content align-items flex-direction
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
 
-@mixin container_skin($bg-color, $font-color, $font-size: "") {
+@mixin container_skin(
+  $bg-color,
+  $font-color,
+  $font-size: "",
+  $font-weight: ""
+) {
   background-color: $bg-color;
   color: $font-color;
-  @if font-size != "" {
+  @if $font-size != "" {
     font-size: $font-size;
+  }
+
+  @if $font-weight != "" {
+    font-weight: $font-weight;
   }
 }
 
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 @import "../node_modules/bootstrap/scss/mixins";

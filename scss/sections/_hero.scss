@@ -1,0 +1,77 @@
+@use '../customise' as *;
+@use '../mixins' as *;
+@use '../animation' as *;
+@use '../components/btn' as *;
+
+.hero-container {
+  // padding: 10rem 3rem 0 3rem;
+  padding: 0;
+
+  .container__content {
+    padding: 10rem 3rem 0 3rem;
+  }
+
+  .hero__header {
+    color: $white;
+    margin-top: 0;
+
+    p {
+      font-size: 1.75rem;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      margin-left: 0;
+    }
+
+    .hero__heading {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .hero__video-container {
+    position: relative;
+  }
+
+  .video-icon-container {
+    border-radius: 50%;
+    @include container_skin(transparent, $secondary, 6rem);
+
+    & > * {
+      @include absolute-center;
+    }
+
+    .animation-container {
+      .border-animation {
+        display: block;
+        width: 6.7rem;
+        height: 6.7rem;
+        animation: border--pulse 1s linear infinite;
+        border: 0.6rem solid $white;
+        border-radius: 50%;
+
+        &--1 {
+          animation-delay: 0;
+        }
+
+        &--2 {
+          animation-delay: 0.5s;
+        }
+      }
+    }
+  }
+
+  @include gradient($primary, $secondary);
+  .hero__video-picture img {
+    width: 100%;
+    // !TO DO: Change the max-widdth
+    max-width: 500px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero__header {
+      @include flex(center, flex-start, column);
+    }
+  }
+}

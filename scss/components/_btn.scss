@@ -4,7 +4,7 @@
 .btn {
   // Vanilla
   margin-left: 1vw;
-  padding: 0.4rem 0.2rem 0.4rem 1rem;
+  padding: 1rem 0.5rem 1rem 1.5rem;
   transition: transform 0.3s, background-color 0.3s;
   .btn__description {
     white-space: nowrap;
@@ -21,7 +21,8 @@
   // Skins
   &--icon {
     @include flex(space-between, center);
-    @include container_skin($white, $black, 1.5rem);
+    @include container_skin($white, $black, 1.5rem, 600);
+    letter-spacing: 0.02rem;
     outline: none;
 
     &:hover {
@@ -30,11 +31,11 @@
 
     .icon-container {
       margin-left: 1rem;
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
       border-radius: 50%;
       position: relative;
-      @include container_skin($secondary, $white, 1.2rem);
+      @include container_skin($secondary, $white, 1.5rem);
       @include flex(center, center);
     }
   }
